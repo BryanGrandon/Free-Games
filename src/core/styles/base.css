@@ -1,0 +1,52 @@
+:root {
+  --dark: #242424;
+  --light: #efefef;
+  --main-source: 'JetBrains Mono', sans-serif;
+  --primary: #ff9d00;
+  --stroke: #1b1919;
+}
+
+html {
+  /* Scroll */
+  ::-webkit-scrollbar {
+    width: 0.2rem;
+    height: 0.3rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 100vw;
+  }
+  ::-webkit-scrollbar-track {
+    margin-block: 0.1rem;
+    margin-inline: 0.1rem;
+    background: var(--stroke);
+  }
+  ::-webkit-scrollbar-corner {
+    display: none;
+  }
+
+  /* selection */
+  ::-moz-selection {
+    background-color: var(--stroke);
+    color: var(--primary);
+  }
+  ::selection {
+    background-color: var(--stroke);
+    color: var(--primary);
+  }
+  scrollbar-gutter: stable;
+}
+
+body {
+  color: var(--dark);
+  background-color: var(--light);
+  font-family: var(--main-source);
+}
+
+/* We adapt them to the dark mode.  */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--light);
+    background-color: var(--dark);
+  }
+}
