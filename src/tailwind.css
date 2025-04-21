@@ -1,2 +1,22 @@
 @import './core/styles/base.css';
 @import 'tailwindcss';
+
+@theme {
+  --color-primary: #17cfbc;
+  --color-secondary: #6b03fc;
+}
+
+@layer {
+  .overlay {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #000000a9;
+    }
+  }
+}
