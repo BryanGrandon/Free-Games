@@ -4,6 +4,8 @@
 @theme {
   --color-primary: #17cfbc;
   --color-secondary: #6b03fc;
+
+  --font-force-title: 'Force Majeure Title Italic', sans-serif;
 }
 
 @layer {
@@ -18,5 +20,13 @@
       right: 0;
       background-color: #000000a9;
     }
+  }
+  .max-width {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .test {
+    border: 1px solid #f00;
   }
 }
