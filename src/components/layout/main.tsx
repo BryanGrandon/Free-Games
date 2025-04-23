@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { OPTIONS, URL_API } from '../../services/constants/api'
-import { Get_Api_Info, getApiInfo } from '../../services/getApi'
+import { URL_API } from '../../services/constants/api'
+import { getApiInfo } from '../../services/getApi'
 import Title from '../ui/title'
 
 const Main = () => {
@@ -20,13 +20,13 @@ const Main = () => {
     },
   ])
 
-  const getInfoApi = async ({ url, options }: Get_Api_Info) => {
-    const data = await getApiInfo({ url, options })
+  const getInfoApi = async (url: string) => {
+    const data = await getApiInfo(url)
     if (data) setGames(data)
   }
 
   useEffect(() => {
-    getInfoApi({ url: URL_API, options: OPTIONS })
+    getInfoApi(URL_API)
   }, [])
 
   return (
@@ -35,7 +35,7 @@ const Main = () => {
         <Title text='popularity games' />
 
         <article>
-          <p>AAAA</p>
+          <p></p>
         </article>
       </article>
 

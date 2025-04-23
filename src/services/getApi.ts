@@ -1,17 +1,6 @@
-export type Get_Api_Info = {
-  url: string
-  options: {
-    method: string
-    headers: {
-      'x-rapidapi-key': string
-      'x-rapidapi-host': string
-    }
-  }
-}
-
-const getApiInfo = async ({ url, options }: Get_Api_Info) => {
+const getApiInfo = async (url: string) => {
   try {
-    const response = await fetch(url, options)
+    const response = await fetch(url)
     const result = await response.text()
     return JSON.parse(result)
   } catch (error) {
