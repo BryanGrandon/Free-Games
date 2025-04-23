@@ -8,7 +8,7 @@ const Main = () => {
     {
       id: 0,
       title: '',
-      thumbnail: '',
+      thumbnail: 'https://media.tenor.com/wpSo-8CrXqUAAAAm/loading-loading-forever.webp',
       short_description: '',
       game_url: '',
       genre: '',

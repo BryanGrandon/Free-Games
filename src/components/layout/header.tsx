@@ -1,9 +1,10 @@
 import { IGithub } from '../ui/icons'
 
 const Header = () => {
-  const url = 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   return (
-    <header className={`flex flex-col gap-8 p-4 overlay bg-[url(${url})] bg-cover bg-center text-white`}>
+    <header
+      className={`flex flex-col gap-8 p-4 overlay bg-[url(https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center text-white`}
+    >
       <nav className='flex justify-between items-center relative max-width w-full'>
         <a href='https://www.freetogame.com/api-doc' target='__black' className='hover:text-primary active:scale-95'>
           Free-To-Game API
