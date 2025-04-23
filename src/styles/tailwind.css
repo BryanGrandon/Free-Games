@@ -4,6 +4,8 @@
 @theme {
   --color-primary: #17cfbc;
   --color-secondary: #6b03fc;
+  --color-secondary-50: #3c0091;
+  --color-tertiary: #530532;
 
   --font-force: 'Force Majeure', sans-serif;
   --font-force-title: 'Force Majeure Title Italic', sans-serif;
@@ -25,6 +27,15 @@
   .max-width {
     max-width: 1200px;
     margin: auto;
+  }
+
+  .glassmorphism {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.589);
+    border-radius: 0.5rem;
+    backdrop-filter: blur(0.2rem);
+    -webkit-backdrop-filter: blur(0.2rem);
+    border: 1px solid rgba(0, 0, 0, 0.31);
   }
 
   .test {
