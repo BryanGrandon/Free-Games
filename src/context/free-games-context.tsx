@@ -12,7 +12,7 @@ type Provider_Props = {
 
 const FreeGamesProvider = ({ children }: Provider_Props) => {
   const [modalOpen, setModalOpen] = useState(false)
-  const [modalContent, setModalContent] = useState(<p>sss</p>)
+  const [modalContent, setModalContent] = useState(<p>Default</p>)
 
   const modal = {
     get: {
