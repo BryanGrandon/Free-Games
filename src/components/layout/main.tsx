@@ -1,41 +1,11 @@
-import { useEffect, useState } from 'react'
-import { URL_API, URL_POPULARITY } from '../../services/constants/api'
-import { getApiInfo } from '../../services/getApi'
 import Title from '../ui/title'
 import GameCard from '../ui/game-card'
-import { INFO_DEFAULT, QUANTITY_OF_CARDS } from '../../services/constants/data'
+import { useHookContext } from '../../hooks/hook-context'
 
 const Main = () => {
-  const [games, setGames] = useState([])
-  const [limitGames, setLimitGames] = useState([INFO_DEFAULT])
-  const [offset, setOffset] = useState(0)
-
-  const GetAllGames = async () => {
-    const data = await getApiInfo(URL_API)
-    if (data) {
-      setGames(data)
-      setLimitGames(data.slice(offset, offset + QUANTITY_OF_CARDS))
-      setOffset(offset + QUANTITY_OF_CARDS)
-    }
-  }
-
-  const [popularGames, setPopularGames] = useState([INFO_DEFAULT])
-
-  const getPopularGames = async () => {
-    const data = await getApiInfo(URL_POPULARITY)
-    if (data) setPopularGames(data.slice(0, 5))
-  }
-
-  useEffect(() => {
-    GetAllGames()
-    getPopularGames()
-  }, [])
-
-  const handlerClick = () => {
-    const moreGames = games.splice(offset, offset + QUANTITY_OF_CARDS)
-    setLimitGames([...limitGames, ...moreGames])
-    setOffset(offset + QUANTITY_OF_CARDS)
-  }
+  const { options } = useHookContext()
+  const { popularGames, limitGames } = options.get
+  const handlerClick = () => options.update.limitGames()
 
   return (
     <main className='p-4 max-width'>
