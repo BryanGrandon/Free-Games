@@ -12,6 +12,24 @@ const INFO_DEFAULT = {
   freetogame_profile_url: '',
 }
 
+const MODAL_DEFAULT = {
+  developer: '',
+  game_url: '',
+  genre: '',
+  minimum_system_requirements: {
+    os: '',
+    processor: '',
+    memory: '',
+    graphics: '',
+    storage: '',
+  },
+  publisher: '',
+  release_date: '',
+  short_description: '',
+  thumbnail: '',
+  title: '',
+}
+
 const QUANTITY_OF_CARDS = 20
 
-export { INFO_DEFAULT, QUANTITY_OF_CARDS }
+export { INFO_DEFAULT, QUANTITY_OF_CARDS, MODAL_DEFAULT }

@@ -5,7 +5,7 @@ import { useHookContext } from './hooks/hook-context'
 
 function App() {
   const { modal } = useHookContext()
-  const contentModal = <p>Modal content</p>
+  const contentModal = modal.get.content
 
   return (
     <>

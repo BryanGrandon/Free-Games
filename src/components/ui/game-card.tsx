@@ -1,3 +1,5 @@
+import { useHookContext } from '../../hooks/hook-context'
+import ModalGame from '../layout/modal-game'
 import { IBrowser, IPc } from './icons'
 
 type Game_Card = {
@@ -6,13 +8,21 @@ type Game_Card = {
   platform: string
   release_date: string
   genre: string
+  id: number
 }
 
-const GameCard = ({ img, title, platform, release_date, genre }: Game_Card) => {
+const GameCard = ({ img, title, platform, release_date, genre, id }: Game_Card) => {
   const icon = platform === 'PC (Windows)' ? <IPc className='h-4' /> : <IBrowser className='h-4' />
 
+  const { modal } = useHookContext()
+
+  const handlerClickOpenModal = () => {
+    modal.modify.content(<ModalGame id={id} />)
+    modal.modify.open(true)
+  }
+
   return (
-    <section className='overflow-hidden rounded-xl bg-tertiary  text-white cursor-pointer shadow-md shadow-gray-950  hover:scale-103'>
+    <article onClick={handlerClickOpenModal} className='overflow-hidden rounded-xl bg-tertiary  text-white cursor-pointer shadow-md shadow-gray-950  hover:scale-103'>
       <section className='relative'>
         <img src={img} alt={title + 'image'} className='w-full' />
         <span className='glassmorphism absolute top-1 left-1 px-2'>{release_date}</span>
@@ -22,7 +32,7 @@ const GameCard = ({ img, title, platform, release_date, genre }: Game_Card) => {
         <h3 className='font-semibold'>{title}</h3>
         <span>{icon}</span>
       </section>
-    </section>
+    </article>
   )
 }
 
