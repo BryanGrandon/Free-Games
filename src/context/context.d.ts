@@ -19,6 +19,7 @@ type Options = {
   }
   update: {
     limitGames: () => void
+    filterCategory: (category: string) => void
   }
 }
 

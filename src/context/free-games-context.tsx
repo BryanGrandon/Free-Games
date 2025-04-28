@@ -29,6 +29,7 @@ const FreeGamesProvider = ({ children }: Provider_Props) => {
   const [limitGames, setLimitGames] = useState([INFO_DEFAULT])
   const [popularGames, setPopularGames] = useState([INFO_DEFAULT])
   const [offset, setOffset] = useState(0)
+  const [inCategory, SetInCategory] = useState(false)
 
   const GetAllGames = async () => {
     const data = await getApiInfo(URL_API)
@@ -44,9 +45,42 @@ const FreeGamesProvider = ({ children }: Provider_Props) => {
   }
 
   const handlerClickLimitGames = () => {
-    const moreGames = games.splice(offset, offset + QUANTITY_OF_CARDS)
-    setLimitGames([...limitGames, ...moreGames])
-    setOffset(offset + QUANTITY_OF_CARDS)
+    if (!inCategory) {
+      const moreGames = games.splice(offset, offset + QUANTITY_OF_CARDS)
+      setLimitGames([...limitGames, ...moreGames])
+      setOffset(offset + QUANTITY_OF_CARDS)
+    } else {
+      const moreGames = games.splice(offset, offset + QUANTITY_OF_CARDS)
+      console.log(moreGames)
+      console.log(games)
+      console.log(offset)
+
+      setLimitGames([...limitGames, ...moreGames])
+      setOffset(offset + QUANTITY_OF_CARDS)
+      console.log('sss')
+    }
+  }
+  // use another way to get the number of elements to be displayed
+
+  // const getGameByCategory = async () => {
+  //   const data = await getApiInfo(`${URL_API}?category=${category}`)
+  //   if (data) {
+  //     setGames(data)
+  //     console.log(data)
+
+  //     setLimitGames(data.slice(0, QUANTITY_OF_CARDS))
+  //     setOffset(offset + QUANTITY_OF_CARDS)
+  //   }
+  // }
+
+  const filterCategory = async (category: string) => {
+    const data = await getApiInfo(`${URL_API}?category=${category}`)
+    SetInCategory(true)
+    if (data) {
+      setGames(data)
+      setLimitGames(data.slice(0, QUANTITY_OF_CARDS))
+      setOffset(offset + QUANTITY_OF_CARDS)
+    }
   }
 
   useEffect(() => {
@@ -61,6 +95,7 @@ const FreeGamesProvider = ({ children }: Provider_Props) => {
     },
     update: {
       limitGames: handlerClickLimitGames,
+      filterCategory: filterCategory,
     },
   }
 
