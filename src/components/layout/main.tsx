@@ -9,7 +9,7 @@ const Main = () => {
   const handlerClick = () => options.update.limitGames()
 
   return (
-    <main className='p-4 max-width'>
+    <main className='p-4 max-width '>
       <article className='flex flex-col gap-10 py-10'>
         <Title text='popularity games' />
 

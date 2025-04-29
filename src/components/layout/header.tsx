@@ -14,7 +14,7 @@ const Header = () => {
       </nav>
       <article className='relative flex flex-col justify-center items-center gap-6 min-h-60 max-width bg-[url(${url})]'>
         <h1 className='text-5xl text-primary text-center font-force-title text-shadow-2xl'>Free Games</h1>
-        <p className='text-xl'>You can find a variety of free games that may surprise you.</p>
+        <p className='text-xl'>Here you can find a variety of free games that may surprise you.</p>
       </article>
     </header>
   )
