@@ -2,6 +2,7 @@ import Title from '../ui/title'
 import GameCard from '../ui/game-card'
 import { useHookContext } from '../../hooks/hook-context'
 import Filter from './filter'
+import { IArrowUp } from '../ui/icons'
 
 const Main = () => {
   const { options } = useHookContext()
@@ -34,6 +35,9 @@ const Main = () => {
           </button>
         ) : null}
       </article>
+      <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className='fixed bottom-2 right-2 z-10 bg-secondary rounded-full p-2 shadow-md shadow-gray-900 active:scale-95'>
+        <IArrowUp />
+      </button>
     </main>
   )
 }

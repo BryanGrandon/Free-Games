@@ -62,4 +62,12 @@ const IClose = ({ className = '' }: Icons) => {
   )
 }
 
-export { IClose }
+const IArrowUp = ({ className }: Icons) => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' height='1.2rem' viewBox='0 0 512 512' className={className}>
+      <polyline points='112 328 256 184 400 328' style={{ fill: 'none', stroke: 'currentColor', strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '48px' }} />
+    </svg>
+  )
+}
+
+export { IClose, IArrowUp }
