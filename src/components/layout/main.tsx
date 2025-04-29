@@ -2,11 +2,10 @@ import Title from '../ui/title'
 import GameCard from '../ui/game-card'
 import { useHookContext } from '../../hooks/hook-context'
 import Filter from './filter'
-import { QUANTITY_OF_CARDS } from '../../services/constants/data'
 
 const Main = () => {
   const { options } = useHookContext()
-  const { popularGames, limitGames } = options.get
+  const { popularGames, limitGames, allGames } = options.get
   const handlerClick = () => options.update.limitGames()
 
   return (
@@ -29,7 +28,7 @@ const Main = () => {
             <GameCard key={e.id} img={e.thumbnail} title={e.title} platform={e.platform} release_date={e.release_date} genre={e.genre} id={e.id} />
           ))}
         </article>
-        {limitGames.length >= QUANTITY_OF_CARDS ? (
+        {limitGames.length < allGames ? (
           <button onClick={handlerClick} className='bg-secondary rounded-md m-auto px-6 py-1 text-lg cursor-pointer shadow-md shadow-gray-900 active:scale-95'>
             More games
           </button>

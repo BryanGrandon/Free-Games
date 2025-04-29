@@ -5,20 +5,15 @@ const Filter = () => {
   const { options } = useHookContext()
   const { filterCategory } = options.update
 
-  const handlerClick = (e: string) => {
-    filterCategory(e)
-    console.log(e)
-  }
+  const handlerClick = (e: string) => filterCategory(e)
 
   return (
-    <article>
-      <section>
-        {LIST_OF_CATEGORIES.map((e) => (
-          <button key={e} onClick={() => handlerClick(e)} className='bg-secondary rounded-md m-1 px-6 py-1 text-lg cursor-pointer shadow-md shadow-gray-900 active:scale-95'>
-            {e}
-          </button>
-        ))}
-      </section>
+    <article className='flex flex-wrap gap-1 justify-center'>
+      {LIST_OF_CATEGORIES.map((e) => (
+        <button key={e} onClick={() => handlerClick(e)} className='bg-secondary rounded-md  px-3 py-1 cursor-pointer shadow-md shadow-gray-900 active:scale-95'>
+          {e}
+        </button>
+      ))}
     </article>
   )
 }

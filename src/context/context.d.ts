@@ -16,6 +16,7 @@ type Options = {
   get: {
     limitGames: Card_Default[]
     popularGames: Card_Default[]
+    allGames: number
   }
   update: {
     limitGames: () => void
