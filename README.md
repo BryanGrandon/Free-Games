@@ -2,6 +2,7 @@
 
 Free Games is a web application that provides a list of free games available on the Epic Games Store. It allows users to view game details, including images, descriptions, and links to the Epic Games Store.
 
+- [API.](https://www.freetogame.com/api-doc)
 - [🌐 Website Demo.](https://bryangrandon.github.io/Free-Games/)
 
 ## 📚 Technologies Used
